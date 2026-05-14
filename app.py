@@ -33,7 +33,7 @@ if not clients_df.empty:
         complaints = len(tasks_df[tasks_df['category'] == 'Complaint']) if not tasks_df.empty else 0
         st.metric("Pending Complaints", complaints)
     with col4:
-        st.metric("Monthly Revenue", f"${clients_df['revenue'].sum():,.2f}")
+        st.metric("Monthly Revenue", f"₹{clients_df['revenue'].sum():,.2f}")
     with col5:
         overdue = len(clients_df[clients_df['billing_status'] == 'Overdue'])
         st.metric("Overdue Accounts", overdue)
